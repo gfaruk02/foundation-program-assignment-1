@@ -2,18 +2,22 @@
 
 function describeValue(value){
 
-    if(value){
-        return `" ${typeof value} | truthy "`;
-    }else{
-        return `" ${typeof value} | falsy"`;
-    }
+    // if(value){
+    //     return `"${typeof value} | truthy"`;
+    // }else{
+    //     return `"${typeof value} | falsy"`;
+    // }
+
+    //Ternary Operator
+    return `${typeof value} | ${value ? "truthy" : "falsy"}`;
+
 };
-// console.log(describeValue("0"))
-console.log(describeValue(NaN))
-// console.log(describeValue("hello"));	//"string | truthy"
-// console.log(describeValue(""));	//"string | falsy"
-// console.log(describeValue(25));	//"number | truthy"
-// console.log(describeValue(0));	//"number | falsy"
-// console.log(describeValue(true));	//"boolean | truthy"
-// console.log(describeValue(null));	//"object | falsy"
+console.log(describeValue("0"));
+// console.log(describeValue(NaN));
+// console.log(describeValue("hello"));
+// console.log(describeValue(""));
+// console.log(describeValue(25));
+// console.log(describeValue(0));
+// console.log(describeValue(true));
+// console.log(describeValue(null));
 // console.log(describeValue(undefined));
