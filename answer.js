@@ -25,3 +25,9 @@
 
 
 //Question No. 2 Bangladesh Weekend Machine
+
+function getDayType(day){
+    day = day.toLowerCase();
+    return day;
+}
+console.log(getDayType("SaturDay"));
