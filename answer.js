@@ -81,8 +81,13 @@
 
 
 ////Question No. 4 Dhaka CNG Fare Meter
-function getCngFare(distance, isNight, waitingMinutes){
+// function getCngFare(distance, isNight, waitingMinutes){
+function getCngFare(distance,){
+    if(distance<=2){
+        return "50"
+    }
 
 }
 
-console.log(getCngFare(distance, isNight, waitingMinutes));
+// console.log(getCngFare(distance, isNight, waitingMinutes));
+console.log(getCngFare(2));
