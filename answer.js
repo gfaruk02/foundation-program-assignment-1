@@ -82,19 +82,26 @@
 
 ////Question No. 4 Dhaka CNG Fare Meter
 function getCngFare(distance, isNight=false, waitingMinutes=0){
-
+    let fare = 50;
     if(distance <= 0){
-        return 0;
+        return fare = 0;
+    }    
+    else if(fare < 2){
+        return fare = fare + (distance-2)*15;
     }
-    else if(distance <= 2){
-        return 50;
+    else if(waitingMinutes > 0 ){
+        return fare = fare + waitingMinutes*2;
+    } else if(isNight){
+        return fare = fare * 1.2;
     }
-    else if(distance > 2){
-        return 50+(distance-2)*15;
+    
+    else {
+        return fare;
     }
-
+    
 
 }
 
 // console.log(getCngFare(distance, isNight, waitingMinutes));
-console.log(getCngFare(3));
+// console.log(getCngFare(3, false, 2));
+console.log(getCngFare(0));
