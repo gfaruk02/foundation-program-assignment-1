@@ -84,24 +84,33 @@
 function getCngFare(distance, isNight=false, waitingMinutes=0){
     let fare = 50;
     if(distance <= 0){
-        return fare = 0;
+        fare = 0;
     }    
-    else if(fare < 2){
-        return fare = fare + (distance-2)*15;
+    if(distance > 2){
+        fare = fare + (distance - 2 )*15;
     }
-    else if(waitingMinutes > 0 ){
-        return fare = fare + waitingMinutes*2;
-    } else if(isNight){
-        return fare = fare * 1.2;
+    if(waitingMinutes > 0 ){
+        fare = fare + waitingMinutes*2;
     }
-    
-    else {
-        return fare;
+    if(isNight===true){
+        fare = fare * 1.2;
     }
+    return fare;
     
 
 }
 
 // console.log(getCngFare(distance, isNight, waitingMinutes));
 // console.log(getCngFare(3, false, 2));
-console.log(getCngFare(0));
+// console.log(getCngFare(0));
+
+// console.log(getCngFare(2)) 
+// console.log(getCngFare(1))
+// console.log(getCngFare(5))
+// console.log(getCngFare(10))
+// console.log(getCngFare(5, false, 10))
+// console.log(getCngFare(5, true))
+// console.log(getCngFare(5, true, 10))
+
+
+////Question No. 5 Run Chase Commentator
