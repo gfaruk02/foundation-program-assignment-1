@@ -123,7 +123,16 @@ const getChaseVerdict = (target, scored, ballsLeft) => {
         return `"Lost"`;
     }
 
-    
+    const requiredRate = (runsNeeded / ballsLeft) * 6;
+    let verdict;
+    if(requiredRate <= 6){
+        verdict = "Comfortable";
+    }else if(requiredRate <= 12){
+        verdict = "Tough";
+    }else{
+        verdict = "Almost Impossible";
+    }
+    return `"${verdict}"`;
 };
 // console.log(getChaseVerdict(200, 200, 12));
 console.log(getChaseVerdict(200, 190, 0));
