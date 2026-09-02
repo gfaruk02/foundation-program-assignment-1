@@ -26,31 +26,47 @@
 
 //Question No. 2 Bangladesh Weekend Machine
 
-function getDayType(day){
-    day = day.toLowerCase();
+// function getDayType(day){
+//     day = day.toLowerCase();
 
-    switch(day){
-        case "friday":
-        case "saturday":
-            return "Weekend";
+//     switch(day){
+//         case "friday":
+//         case "saturday":
+//             return "Weekend";
 
-        case "sunday":
-        case "monday":
-        case "tuesday":
-        case "wednesday":
-        case "thursday":
-            return "Working Day";
+//         case "sunday":
+//         case "monday":
+//         case "tuesday":
+//         case "wednesday":
+//         case "thursday":
+//             return "Working Day";
 
-        default:
-            return "Invalid Day"
-    }
-    // return day;
-}
-// console.log(getDayType("Friday"));
-// console.log(getDayType("friday"));
-// console.log(getDayType("MONDAY"));
-console.log(getDayType("Bandarban"));
+//         default:
+//             return "Invalid Day"
+//     }
+//     // return day;
+// }
+// // console.log(getDayType("Friday"));
+// // console.log(getDayType("friday"));
+// // console.log(getDayType("MONDAY"));
+// console.log(getDayType("Bandarban"));
 
 
 
 //Question No. 3 Username Gatekeeper
+
+function validateUsername (username ){
+    if(username.length < 4){
+        return "To short";
+    }
+    else if(username.includes(" ")){
+        return "No Space Allowed";
+    }
+    else if(username.toLowerCase().includes("admin")){
+        return "Reserved Word";
+    }else{
+        return "Available";
+    }
+}
+
+console.log(validateUsername("helloAdmin"))
